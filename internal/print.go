@@ -91,10 +91,10 @@ func PrintResponse(resp *http.Response, t time.Duration) {
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		fmt.Println("Error reading response body:", err)
-		return
+	} else if len(body) != 0 {
+		fmt.Println("Body:")
+		fmt.Printf("%s\n", body)
 	}
-	fmt.Println("Body:")
-	fmt.Printf("%s\n", body)
 }
 
 func printTLSConnectionState(tlsState *tls.ConnectionState) {
