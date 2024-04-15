@@ -1,9 +1,12 @@
 package cmd
 
 import (
+	"fmt"
 	"net/http"
+	"os"
+	"time"
 
-	"github.com/charmbracelet/log"
+	"github.com/Frank-Mayer/http/internal"
 	"github.com/spf13/cobra"
 )
 
@@ -12,13 +15,16 @@ var getCmd = &cobra.Command{
 	Short: "HTTP GET request",
 	Run: func(cmd *cobra.Command, args []string) {
 		for _, arg := range args {
-			log.Info("requesting " + arg)
+			fmt.Println("requesting " + arg)
+			start := time.Now()
 			res, err := http.Get(arg)
+			dur := time.Since(start)
 			if err != nil {
-				log.Error(err)
-				continue
+				fmt.Fprintln(os.Stderr, err.Error())
 			}
-			log.Info(res)
+			if res != nil {
+				internal.PrintResponse(res, dur)
+			}
 		}
 	},
 }
