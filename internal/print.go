@@ -31,8 +31,8 @@ func PrintResponse(resp *http.Response, t time.Duration) {
 	defer resp.Body.Close()
 
 	fmt.Println("Took " + t.String())
-	fmt.Print("GET ")
-	fmt.Println(resp.Request.URL.String())
+
+	fmt.Printf("%s %s %s\n", resp.Request.Proto, resp.Request.Method, resp.Request.URL.String())
 
 	{
 		var c *color.Color

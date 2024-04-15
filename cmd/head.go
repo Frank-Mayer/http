@@ -17,7 +17,7 @@ var headCmd = &cobra.Command{
 		for _, arg := range args {
 			fmt.Println("requesting " + arg)
 			start := time.Now()
-			res, err := http.Get(arg)
+			res, err := http.Head(arg)
 			dur := time.Since(start)
 			if err != nil {
 				fmt.Fprintln(os.Stderr, err.Error())
