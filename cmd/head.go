@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/Frank-Mayer/http/internal"
+	"github.com/tsukinoko-kun/http/internal"
 	"github.com/spf13/cobra"
 )
 

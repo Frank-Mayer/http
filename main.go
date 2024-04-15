@@ -1,6 +1,6 @@
 package main
 
-import "github.com/Frank-Mayer/http/cmd"
+import "github.com/tsukinoko-kun/http/cmd"
 
 func main() {
 	cmd.Execute()

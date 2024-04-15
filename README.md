@@ -1,5 +1,5 @@
 # http
 
 ```shell
-go install github.com/Frank-Mayer/http@latest
+go install github.com/tsukinoko-kun/http@latest
 ```

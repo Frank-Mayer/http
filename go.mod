@@ -1,4 +1,4 @@
-module github.com/Frank-Mayer/http
+module github.com/tsukinoko-kun/http
 
 go 1.22.2
 
